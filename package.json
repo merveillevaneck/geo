@@ -9,9 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/three": "^9.5.4",
+    "@react-three/cannon": "^6.4.0",
+    "@react-three/csg": "^1.1.5",
+    "@react-three/drei": "^9.31.1",
+    "@react-three/fiber": "^8.7.4",
+    "@react-three/postprocessing": "^2.6.2",
+    "@react-three/rapier": "^0.6.8",
+    "@types/styled-components": "^5.1.26",
+    "@types/styled-system": "^5.1.15",
+    "@types/three": "^0.144.0",
+    "leva": "^0.9.31",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.5",
+    "styled-system": "^5.1.5",
+    "three": "0.143.0",
+    "use-cannon": "^0.5.3"
   },
   "devDependencies": {
     "@types/node": "18.7.18",

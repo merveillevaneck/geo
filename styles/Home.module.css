@@ -4,6 +4,7 @@
 
 .main {
   min-height: 100vh;
+  min-width: 100vw;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -116,13 +117,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
