@@ -23,8 +23,7 @@ export function Duck(props: JSX.IntrinsicElements['group']) {
   const mesh = useRef<Mesh>(null!)
   useFrame(({clock}) => {
     if (!mesh.current) return;
-    mesh.current.rotation.x = clock.getElapsedTime() / 10;
-    mesh.current.rotation.y = clock.getElapsedTime() / 15;
+    mesh.current.rotation.y = -clock.getElapsedTime() / 10;
     mesh.current.position.set(
       mesh.current.position.x + clock.getElapsedTime() / 10,
       mesh.current.position.y + clock.getElapsedTime() / 20,
@@ -32,9 +31,9 @@ export function Duck(props: JSX.IntrinsicElements['group']) {
     )
   });
   return (
-    <group {...props} dispose={null}>
+    <group {...props} scale={2} dispose={null}>
       <group scale={0.01}>
-        <mesh ref={mesh} rotation={[-Math.PI / 4, 0, Math.PI / 4]} geometry={nodes.LOD3spShape.geometry} material={materials['blinn3-fx']} />
+        <mesh ref={mesh} rotation={[0, Math.PI / 4, Math.PI / 4]} geometry={nodes.LOD3spShape.geometry} material={materials['blinn3-fx']} />
       </group>
     </group>
   )

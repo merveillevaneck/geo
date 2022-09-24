@@ -26,17 +26,17 @@ const getRandomDimensions = (options: any) => [
 
 
 export const Ground = (props: any) => {
-  const [ref, api] = useSphere(() => ({ velocity: [0, 0, 0], rotation: [-Math.PI / 2, 0, 0], position: [0, -252, 0], args: [250]}));
+  const [ref, api] = useSphere(() => ({ velocity: [0, 0.001, 0], position: [0, -252, 0], args: [250]}));
 
   return (
-    <Sphere ref={ref} position={[0, -252, 0]} args={[250, 500, 500]} receiveShadow>
-      <meshToonMaterial color="grey" />
+    <Sphere ref={ref} position={[0, -252, 0]} args={[250, 1000, 1000]} receiveShadow>
+      <meshStandardMaterial color="grey" />
     </Sphere>
   );
 }
 
 export const Text = (props: any) => {
-  const [ref, api] = useBox(() => ({ mass: 1, angularVelocity: [2, 0, 0], velocity: [0, -4, 0], rotation: [-Math.PI / 4, 0, 0], position: [1, 0, 0], args: [7, 4, 0.38] }));
+  const [ref, api] = useBox(() => ({ mass: 1, angularVelocity: [-5.1, 0, 0], velocity: [0, -1, 0], rotation: [-Math.PI / 4, 0, 0], position: [1, 0, 0], args: [7, 5, 0.38] }));
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
@@ -54,7 +54,7 @@ export const Text = (props: any) => {
       <K color="green" />
       <Text3D castShadow curveSegments={100} size={1} position={[0, 0, 0]} font="/Inter_Bold.json">
         iloLab
-        <meshPhongMaterial color="white" />
+        <meshStandardMaterial color="white" />
       </Text3D>
     </Center>
   )
@@ -89,7 +89,7 @@ export const Scene = () => {
       <directionalLight
         castShadow
         position={[20, 20, 20]}
-        intensity={0.3}
+        intensity={0.5}
         color="white"
         shadow-mapSize-height={6000}
         shadow-mapSize-width={6000}
